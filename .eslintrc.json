@@ -1,16 +1,33 @@
 {
-    
+    "env": {
+        "browser": true,
+        "es6": true
+    },
     "extends": [
-        "airbnb",
-        "prettier"
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "prettier",
+        "airbnb"
     ],
-    
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": { 
+            "jsx": true
+         },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
     "plugins": [
-        "prettier"
+        "react",
+        "@typescript-eslint"
     ],
     "rules": {
         "react/prop-types": "off",
-        "react/jsx-filename-extension":"off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx",".ts",".tsx"] }],
         "import/no-extraneous-dependencies" :"warn",
         "no-unused-vars":"warn",
         "no-nested-ternary":"off",
@@ -19,6 +36,14 @@
         "arrow-body-style": "off",
         "jsx-a11y/control-has-associated-label":"off",
         "no-unneeded-ternary":"warn",
-        "react/jsx-no-bind":"off"
+        "react/jsx-no-bind":"off",
+        "no-use-before-define":"warn",
+        "import/extensions":"off",
+        "object-curly-newline":"warn",
+        "import/no-unresolved":"warn",
+        "linebreak-style": "off",
+        "implicit-arrow-linebreak":"warn",
+        "comma-dangle":"warn",
+        "axe-hint":"off"
     }
 }

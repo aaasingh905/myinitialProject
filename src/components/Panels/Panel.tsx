@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { useDrag, useDrop } from 'react-dnd';
+import React from 'react';
 import './Panel.scss';
 import {
   HolderOutlined,
@@ -8,26 +7,13 @@ import {
 } from '@ant-design/icons';
 import DataSources from './DataSources/DataSources';
 
-function Panel({ item, flexBasis, position = '1 / 1 / 2 / 2' }) {
-  const ref = useRef();
-  const [, drag, preview] = useDrag(() => ({ type: 'panel', item }))
-  const [, drop] = useDrop(() => ({
-    accept: 'panel',
-    drop: (droppedItem) => {
-      if (droppedItem.id === item.id) return null;
-      console.log('👉 | droppedItem', droppedItem);
-      // if 3 is dropped on 1
-      // place 3 ath the position of 1 and update the original data array
-      return droppedItem;
-    }
-  }))
-
+function Panel({ item, flexBasis }: any) {
   const panelHeaderContent = (
     <div className="PanelHeaderContainer">
       <div className="PanelHeaderSubContainer1">
-        <div ref={drag} className="headerButtonItems">
+        <button type="button" className="headerButtonItems">
           <HolderOutlined role="button" />
-        </div>
+        </button>
         <span className="PanelName">{item?.name}</span>
       </div>
       <div className="PanelHeaderSubContainer2">
@@ -47,12 +33,10 @@ function Panel({ item, flexBasis, position = '1 / 1 / 2 / 2' }) {
       </div>
     </div>
   );
-  drop(preview(ref));
   return (
     <div
-      ref={ref}
       className="PanelContainer"
-      style={{ gridArea: position }}
+      style={{ flexBasis: `${flexBasis}%`, height: `${flexBasis}%` }}
     >
       {panelHeaderContent}
       <DataSources dataSource={item?.dataSources} />

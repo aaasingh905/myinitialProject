@@ -3,7 +3,12 @@ import Panel from '../../../components/Panels/Panel';
 import data from '../../../userData';
 import './Child.scss';
 
-function Child({ subpanelId, panelId }) {
+type ChildProps = {
+  subpanelId: string;
+  panelId: string;
+};
+
+function Child({ subpanelId, panelId }: ChildProps) {
   const [selectedElement, setSelectedElement] = useState({});
 
   useEffect(() => {

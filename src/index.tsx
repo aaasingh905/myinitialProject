@@ -1,20 +1,22 @@
+// eslint-disable-next-line no-use-before-define
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.scss';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reportWebVitals from './reportWebVitals';
-// import { store } from './Store/Store'
-import reducers from './Store/Reducers/Index';
+// eslint-disable-next-line import/no-unresolved
 import App from './App';
-import './index.scss';
+// eslint-disable-next-line import/no-unresolved
+import reportWebVitals from './reportWebVitals';
+import reducers from './Store/Reducers/Index';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider store={createStore(reducers)}> */}
-    <App />
-    {/* </Provider> */}
+    <Provider store={createStore(reducers)}>
+      <App />
+    </Provider>
   </React.StrictMode>,
-  // eslint-disable-next-line no-undef
+  // eslint-disable-next-line comma-dangle
   document.getElementById('root')
 );
 

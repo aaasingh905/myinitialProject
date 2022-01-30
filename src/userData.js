@@ -26,7 +26,10 @@ const user = {
           archived: false,
           color: '#206FA8',
           url: '/panels/pd1/subpanel/cd1',
-          dataSources: [{ id: 'sgh', name: 'Outlook' }],
+          dataSources: [
+            { id: 'sgh', name: 'Gmail' },
+            { id: 'sgh', name: 'OneDrive' },
+          ],
         },
         {
           name: "Internal Comm's",
@@ -65,7 +68,7 @@ const user = {
         {
           name: 'Caterers',
           id: 'c1',
-          pId: 'pGH2',
+          pId: 'p2',
           archived: false,
           color: '#fda658',
           url: '/panels/p2/subpanel/c1',
@@ -77,7 +80,7 @@ const user = {
         {
           name: 'Caterers',
           id: 'c1',
-          pId: 'p255',
+          pId: 'p2',
           archived: false,
           color: '#fda658',
           url: '/panels/p2/subpanel/c1',
@@ -89,7 +92,7 @@ const user = {
         {
           name: 'Caterers',
           id: 'c1',
-          pId: 'p28456',
+          pId: 'p2',
           archived: false,
           color: '#fda658',
           url: '/panels/p2/subpanel/c1',
@@ -100,24 +103,23 @@ const user = {
         },
         {
           name: 'Caterers',
-          id: 'c12',
+          id: 'c1',
           pId: 'p2',
           archived: false,
           color: '#fda658',
-          url: '/panels/p2/subpanel/c12',
+          url: '/panels/p2/subpanel/c1',
           dataSources: [
             { id: 'sgh', name: 'Gmail' },
             { id: 'sgh', name: 'OneDrive' },
           ],
         },
-
         {
           name: 'Caterers',
-          id: 'c17',
+          id: 'c1',
           pId: 'p2',
           archived: false,
           color: '#fda658',
-          url: '/panels/p2/subpanel/c17',
+          url: '/panels/p2/subpanel/c1',
           dataSources: [
             { id: 'sgh', name: 'Gmail' },
             { id: 'sgh', name: 'OneDrive' },
@@ -150,11 +152,11 @@ const user = {
         },
         {
           name: 'River Boat Company 22',
-          id: 'c767',
+          id: 'c3',
           pId: 'p2',
           archived: false,
           color: '#fda658',
-          url: '/panels/p2/subpanel/c767',
+          url: '/panels/p2/subpanel/c3',
           dataSources: [
             { id: 'sgh', name: 'Slack' },
             { id: 'sgh', name: 'OneDrive' },
@@ -162,11 +164,11 @@ const user = {
         },
         {
           name: 'River Boat Company 11',
-          id: 'c39',
+          id: 'c3',
           pId: 'p2',
           archived: false,
           color: '#fda658',
-          url: '/panels/p2/subpanel/c39',
+          url: '/panels/p2/subpanel/c3',
           dataSources: [
             { id: 'sgh', name: 'Slack' },
             { id: 'sgh', name: 'OneDrive' },

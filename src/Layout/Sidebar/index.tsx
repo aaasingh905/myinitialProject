@@ -6,13 +6,27 @@ import AddPanel from './AddPanel';
 
 const { Sider } = Layout;
 
+type ChildItemProps = {
+  name: string;
+  id: string;
+  color: string;
+  path: string;
+};
+
+type ParentItemProps = {
+  name: string;
+  id: string;
+  color: string;
+  children: [];
+};
+
 const Marker = ({ color = 'white', fill = false }) => {
   const style = { borderColor: color };
   if (fill) style.backgroundColor = color;
   return <span className="sidebar-marker" style={style} />;
 };
 
-const ChildItem = ({ name, id, color, path }) => {
+const ChildItem = ({ name, id, color, path }: ChildItemProps) => {
   return (
     <Link
       className="sidebar-items sidebar-items-child"
@@ -29,7 +43,7 @@ const ChildItem = ({ name, id, color, path }) => {
   );
 };
 
-const ParentItem = ({ name, id, color, children }) => {
+const ParentItem = ({ name, id, color, children }: ParentItemProps) => {
   const path = `/panels/${id}`;
   const items = [
     <Link
@@ -41,23 +55,28 @@ const ParentItem = ({ name, id, color, children }) => {
         root.style.setProperty('--primary-theme-color', color);
       }}
     >
-      <Marker color={color} fill={children?.length > 0 ? false : true} />
+      <Marker color={color} fill={!(children?.length > 0)} />
       {name}
     </Link>,
   ];
   if (children?.length) {
-    items.push(children.map((childData) => ChildItem({ ...childData, path })));
+    items.push(
+      children.map((childData: any) => ChildItem({ ...childData, path }))
+    );
   }
   return items;
 };
 
-const Sidebar = ({ panels }) => {
+const Sidebar = ({ panels }: any) => {
   const [showAddPanelButton, setShowAddPanelButton] = React.useState(true);
   const panelItems = useMemo(
     () =>
       panels
         .map(ParentItem)
-        .reduce((panelArray, current) => [...panelArray, ...current], []),
+        .reduce(
+          (panelArray: any, current: any) => [...panelArray, ...current],
+          []
+        ),
     [panels]
   );
   const { Panel } = Collapse;

@@ -10,19 +10,25 @@ import {
 } from '@ant-design/icons';
 import './NavMenu.scss';
 
-function NavMenu({ open, setOpen }) {
+type NavMenuProps = {
+  open: boolean;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function NavMenu({ open, setOpen }: NavMenuProps) {
+  const menuButtonCSS = {
+    height: '30px',
+    width: '30px',
+    backgroundColor: 'white',
+    border: 'none',
+  };
   return (
     <div className="topHeader">
       <div className="headerSearch">
         <div>
           <button
             type="button"
-            style={{
-              height: '30px',
-              width: '30px',
-              backgroundColor: 'white',
-              border: 'none',
-            }}
+            style={menuButtonCSS}
             onClick={() => setOpen(!open)}
           >
             {open ? <LeftOutlined /> : <MenuOutlined />}
@@ -32,22 +38,28 @@ function NavMenu({ open, setOpen }) {
           placeholder="Search Jill's Party"
           style={{ width: '40%' }}
           suffix={<SearchOutlined className="headerButtonItems" />}
-          size="small"
+          size="middle"
         />
         <div className="headerButtons">
           <Link to="/">
             <button
               type="button"
               className="headerButtonItems"
-              icon={<AppstoreAddOutlined rotate={180} />}
-            />
+              title="A"
+              // icon={}
+            >
+              <AppstoreAddOutlined rotate={180} />
+            </button>
           </Link>
           <Link to="/login">
             <button
               type="button"
               className="headerButtonItems"
-              icon={<UsergroupAddOutlined />}
-            />
+              title="A"
+              // icon={}
+            >
+              <UsergroupAddOutlined />
+            </button>
           </Link>
         </div>
       </div>
