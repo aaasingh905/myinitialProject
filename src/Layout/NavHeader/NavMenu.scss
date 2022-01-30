@@ -1,0 +1,32 @@
+@import '../../scss/Colors';
+
+.topHeader {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+ }
+.headerSearch {
+    width: 100%;
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2px;
+}
+.headerButtons {
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.headerButtonItems {
+        border:none;
+       color:black ;
+       &:hover{
+        color:var(--primary-theme-color) 
+    
+    
+}
+}

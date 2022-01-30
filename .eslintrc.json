@@ -1,0 +1,24 @@
+{
+    
+    "extends": [
+        "airbnb",
+        "prettier"
+    ],
+    
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "react/prop-types": "off",
+        "react/jsx-filename-extension":"off",
+        "import/no-extraneous-dependencies" :"warn",
+        "no-unused-vars":"warn",
+        "no-nested-ternary":"off",
+        "react/function-component-definition":"off",
+        "import/no-named-as-default-member":"warn",
+        "arrow-body-style": "off",
+        "jsx-a11y/control-has-associated-label":"off",
+        "no-unneeded-ternary":"warn",
+        "react/jsx-no-bind":"off"
+    }
+}
